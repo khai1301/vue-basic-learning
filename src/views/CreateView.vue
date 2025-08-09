@@ -9,7 +9,7 @@ const todo = reactive({
 <template>
   <main>
     <div class="form-create">
-      <div class="title">
+      <div class="label-title">
         <h2>Create todo</h2>
       </div>
       <div class="input-todo">
@@ -18,9 +18,9 @@ const todo = reactive({
           <input type="text" name="" id="" placeholder="Enter title todo" v-model="todo.title">
         </div>
         <div class="completed">
-          <label for="">Completed</label>
-          <input type="radio" value="true" name="completed" id="" v-model="todo.completed">
-          <input type="radio" value="false" name="completed" id="" v-model="todo.completed">
+          <label for="">Completed: </label>
+          True <input type="radio" value="true" name="completed" id="" v-model="todo.completed">
+          False <input type="radio" value="false" name="completed" id="" v-model="todo.completed">
         </div>
       </div>
       <div class="btn-main">
@@ -38,8 +38,19 @@ const todo = reactive({
     align-items: center;
   }
 }
+.label-title, .btn-main {
+  margin: 1rem 0;
+}
 .input-todo {
   display: flex;
   flex-direction: column;
+  row-gap: 1rem;
+}
+.title {
+  display: flex;
+  flex-direction: column;
+}
+.completed {
+  display: flex;
 }
 </style>
